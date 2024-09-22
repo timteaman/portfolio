@@ -1,0 +1,20 @@
+@use './../../../styles/mixins/' as*;
+
+.logo {
+  outline: 2px solid transparent;
+  outline-offset: 5px;
+  border-radius: 5px;
+  transition: opacity 0.3s ease-in-out, outline-color 0.3s ease-in-out;
+
+  @include hover {
+    opacity: 0.7;
+  }
+
+  &:focus {
+    outline-color: var(--c-white);
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}

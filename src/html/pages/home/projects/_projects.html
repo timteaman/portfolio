@@ -1,0 +1,57 @@
+<section class="projects section-line" id="projects">
+  <div class="container">
+
+    <div class="projects__inner">
+
+      <div class="projects__text">
+        <h2 class="projects__header">Featured Projects</h2>
+        <p>
+          Here are some of the selected projects that showcase my passion for front-end development.
+        </p>
+      </div>
+
+      <div class="projects__group">
+
+        <include src="html/components/project-card/_index.html" locals='{
+        "imgName": "1",
+        "linksDemo": "https://timteaman.github.io/simplefood/src/",
+        "linksGithub": "https://github.com/timteaman/simplefood",
+        "headerTitle" : "Simple Food",
+        "headerText": "Simple Food offers fast and convenient delivery of delicious, fresh meals straight to your door.",
+        "cardYear" : "2024",
+        "cardRole": "Markup developer"
+
+      }'></include>
+
+        <include src="html/components/project-card/_index.html" locals='{
+        "imgName": "2",
+        "linksDemo": "https://timteaman.github.io/museum_lending/src/",
+        "linksGithub": "https://github.com/timteaman/museum_lending",
+        "headerTitle" : "Museum landing",
+        "headerText": "Explore the world of art at the Museum, showcasing stunning paintings and sculptures that inspire and captivate.",
+        "cardYear" : "2024",
+        "cardRole": "Markup developer"
+
+      }'></include>
+
+        <include src="html/components/project-card/_index.html" locals='{
+        "imgName": "3",
+        "linksDemo": "/not-found.html",
+        "linksGithub": "https://github.com/timteaman/bicycle_market",
+        "headerTitle" : "Bicycle store",
+        "headerText": "Discover top-quality bicycles and gear at our store, designed to meet all your cycling needs.",
+        "cardYear" : "2024",
+        "cardRole": "Markup developer"
+
+      }'></include>
+
+      </div>
+
+      <button class="projects__button btn btn--disabled" type="button">
+        See more
+      </button>
+
+    </div>
+
+  </div>
+</section>

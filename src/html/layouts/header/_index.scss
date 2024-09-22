@@ -1,0 +1,86 @@
+@use './../../../styles/mixins/' as*;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 24px;
+}
+
+.menu {
+  display: flex;
+  gap: 32px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.48px;
+
+  @include rmax($md) {
+    position: absolute;
+    top: 100%;
+    left: -200%;
+    width: 100%;
+    padding-block: 30px;
+    padding-inline: 15px;
+    background-color: rgba(#1A1A1A, 0.95);
+    opacity: 0;
+    flex-direction: column;
+    gap: 24px;
+    transition: left 0.3s ease-in-out;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  &__link {
+    position: relative;
+    border-radius: 5px;
+    outline: 2px solid transparent;
+    outline-offset: 5px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: transparent;
+      transition: background-color 0.3s ease-in-out, color 3s ease-in-out;
+    }
+
+    @include hover {
+      transition: color 0.3s ease-in-out;
+      color: var(--c-white);
+
+      &::before {
+        background-color: var(--c-neutral-offwhite);
+      }
+    }
+
+    &:focus {
+      outline-color: var(--c-white);
+    }
+
+    &:active {
+      color: var(--с-celery);
+    }
+  }
+}
+
+.burger.burger--active+.menu {
+  @include rmax($md) {
+    opacity: 1;
+    left: 0;
+  }
+}

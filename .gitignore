@@ -1,0 +1,47 @@
+dist/
+app/css/*
+
+# Ignore temporary files
+.DS_Store
+*.tmp
+*.temp
+
+# Ignore compiled files
+*.o
+*.out
+*.class
+
+# Ignore IDE configuration files
+.idea/
+.idea/*
+.vscode/
+*.suo
+*.ntvs*
+*.sublime*
+
+# Ignore dependencies and modules
+node_modules/
+bower_components/
+
+# Ignore configuration files
+.env
+*.env.local
+.env.*.local
+.env.development
+.env.test
+.env.production
+package-lock.json
+
+# Ignore log and report files
+logs/
+*.log
+npm-debug.log*
+nmp-debug.*
+
+# Ignore sensitive information files
+*.key
+*.pem
+
+# Ignore temporary directories
+/temp/
+/tmp/

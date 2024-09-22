@@ -1,0 +1,67 @@
+@use './../../../styles/mixins/' as*;
+
+.project-card {
+  padding: 15px;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__title {
+    margin-block: 0 10px;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--c-white);
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__info {
+    color: var(--c-white);
+  }
+
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  &__anchor {
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+    width: fit-content;
+    color: var(--c-yellow-green);
+    outline: 2px solid transparent;
+    outline-offset: 5px;
+    border-radius: 5px;
+    gap: 5px;
+    transition: color 0.3s ease-in-out, outline-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+    @include hover {
+      color: var(--c-white);
+
+      &::after,
+      &::before {
+        transition: background-color 0.3s ease-in-out;
+        background-color: var(--c-white);
+      }
+    }
+
+    &:focus {
+      outline-color: var(--c-white);
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+
+}

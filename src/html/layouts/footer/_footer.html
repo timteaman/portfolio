@@ -1,0 +1,45 @@
+<div class="footer" id="footer">
+
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__group">
+
+        <h2 class="footer__header">
+          Let’s connect
+        </h2>
+
+        <p class="footer__text">
+          Say hello at
+          <a class="footer__link color-white text-underline"
+            href="mailto:tim.like.tea@gmail.com">tim.like.tea@gmail.com</a>
+        </p>
+
+        <p class="footer__text">
+          For more info, here’s my
+          <a class="footer__link color-white text-underline" href="/not-found.html">resume</a>
+        </p>
+
+        <include src="html/components/social/_index.html"></include>
+
+      </div>
+
+      <form class="form" action="send-email" method="POST">
+        <label class="form__label" for="name">Name</label>
+        <input class="form__input" type="text" name="name" id="name" placeholder="Your name" required>
+        <label class="form__label" for="email">Email</label>
+        <input class="form__input" type="email" name="email" id="email" placeholder="Your email" required>
+        <label class="form__label" for="subject">Subject</label>
+        <input class="form__input" type="text" name="subject" id="subject" placeholder="Subject" required>
+
+        <label class="form__label" for="message">Message</label>
+        <textarea class="form__area" name="message" id="message" placeholder="Write your message" required></textarea>
+
+        <button class="btn" type="submit">Submit</button>
+      </form>
+    </div>
+
+    <a class="footer__author" href="https://www.figma.com/@sumn2u" target="_blank">Design by Suman Kunwar</a>
+
+  </div>
+
+</div>
