@@ -1,83 +1,116 @@
-// fixed header
+(() => {
+  // Constants for button text
+  const SHOW_LESS_TEXT = 'Show Less';
+  const LOAD_MORE_TEXT = 'Load More';
 
-const headerEl = document.querySelector('.header');
+  // Throttle function to limit the rate at which a function can fire
+  const throttle = (func, limit) => {
+    let inThrottle;
+    return function () {
+      const args = arguments;
+      const context = this;
+      if (!inThrottle) {
+        func.apply(context, args);
+        inThrottle = true;
+        setTimeout(() => (inThrottle = false), limit);
+      }
+    };
+  };
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > headerEl.offsetHeight) {
-    headerEl.classList.add('scrolled');
-  } else {
-    headerEl.classList.remove('scrolled');
-  }
-});
+  // Helper function to toggle class based on condition
+  const toggleClass = (element, className, condition) => {
+    if (condition) {
+      element.classList.add(className);
+    } else {
+      element.classList.remove(className);
+    }
+  };
 
-// burger
+  // Fixed header with optimized scroll event handler
+  const headerEl = document.querySelector('.header');
+  const headerHeight = headerEl.offsetHeight;
 
-const burgerBtnEl = document.querySelector('.burger');
-const menuLinks = document.querySelectorAll('.menu__link');
+  window.addEventListener(
+    'scroll',
+    throttle(() => {
+      const isScrolled = window.scrollY > headerHeight;
+      toggleClass(headerEl, 'scrolled', isScrolled);
+    }, 100),
+    { passive: true }
+  );
 
-const handleBurgerClick = () => {
-  burgerBtnEl.classList.toggle('burger--active');
-};
+  // Burger menu with accessibility considerations
+  const burgerBtnEl = document.querySelector('.burger');
 
-document.addEventListener('click', (e) => {
-  if (e.target.classList.contains('burger')) {
-    handleBurgerClick();
-  }
-});
+  const handleBurgerClick = () => {
+    burgerBtnEl.classList.toggle('burger--active');
+  };
 
-menuLinks.forEach((link) => {
-  link.addEventListener('click', () => {
-    burgerBtnEl.classList.remove('burger--active');
-  });
-});
-
-// link enable/disable atribut target= blank
-
-const links = document.querySelectorAll('.links__anchor');
-
-links.forEach((link) => {
-  const href = link.getAttribute('href');
-
-  if (href === '/not-found.html') {
-    link.removeAttribute('target');
-  }
-});
-
-// load more/less text
-
-document.querySelectorAll('.experience-card__btn').forEach((button) => {
-  button.addEventListener('click', function () {
-    const textElement =
-      this.closest('.experience-card').querySelector('#collapseSummary');
-    if (textElement) {
-      textElement.classList.toggle('expanded');
-
-      this.textContent = textElement.classList.contains('expanded')
-        ? 'Show Less'
-        : 'Load More';
+  // Handle keyboard events for accessibility
+  burgerBtnEl.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault(); // Prevent page scrolling
+      handleBurgerClick();
     }
   });
-});
 
-// btn animation disabled shake
+  // Event delegation for handling clicks
+  document.body.addEventListener('click', (e) => {
+    // Toggle burger menu
+    if (e.target.classList.contains('burger')) {
+      handleBurgerClick();
+    }
 
-const disabledButton = document.querySelector('.btn--disabled');
-if (disabledButton) {
-  disabledButton.addEventListener('click', function (e) {
-    e.preventDefault();
-    disabledButton.classList.add('shake');
+    // Close burger menu when a menu link is clicked
+    if (e.target.classList.contains('menu__link')) {
+      burgerBtnEl.classList.remove('burger--active');
+    }
 
-    setTimeout(() => {
-      disabledButton.classList.remove('shake');
-    }, 1000);
+    // Toggle text in experience cards
+    if (e.target.classList.contains('experience-card__btn')) {
+      const textElement = e.target
+        .closest('.experience-card')
+        ?.querySelector('#collapseSummary');
+      if (textElement) {
+        textElement.classList.toggle('expanded');
+        e.target.textContent = textElement.classList.contains('expanded')
+          ? SHOW_LESS_TEXT
+          : LOAD_MORE_TEXT;
+      }
+    }
+
+    // Handle external links with href '/not-found.html'
+    if (e.target.matches('.links__anchor')) {
+      const href = e.target.getAttribute('href');
+      if (href === '/not-found.html') {
+        e.preventDefault();
+        window.location.href = href;
+      }
+    }
+
+    // Shake animation for disabled buttons
+    if (e.target.matches('.btn--disabled')) {
+      e.preventDefault();
+      e.target.classList.add('shake');
+      e.target.addEventListener(
+        'animationend',
+        () => {
+          e.target.classList.remove('shake');
+        },
+        { once: true }
+      );
+    }
   });
-}
 
-// add link to div container projects-card
-
-document.querySelectorAll('.project-card').forEach((card) => {
-  card.addEventListener('click', function () {
-    const link = card.querySelector('a.links__anchor').href;
-    window.open(link, '_blank');
+  // Handle clicks on project cards
+  document.querySelectorAll('.project-card').forEach((card) => {
+    card.addEventListener('click', (e) => {
+      // Ignore clicks on internal links
+      if (e.target.closest('a.links__anchor')) return;
+      const linkEl = card.querySelector('a.links__anchor');
+      if (linkEl && linkEl.href !== '/not-found.html') {
+        window.open(linkEl.href, '_blank');
+      }
+    });
   });
-});
+})();

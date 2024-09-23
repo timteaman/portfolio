@@ -40,7 +40,7 @@
   }
 
   &.shake {
-    animation: shake 0.4s infinite;
+    animation: shake 0.4s ease-in-out;
   }
 
   &--disabled {
