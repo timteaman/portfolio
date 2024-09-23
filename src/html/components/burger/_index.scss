@@ -9,6 +9,13 @@
   color: var(--c-white);
   cursor: pointer;
 
+  &.burger--active+.menu {
+    @include rmax($md) {
+      opacity: 1;
+      left: 0;
+    }
+  }
+
   @include rmax($md) {
     display: block;
   }

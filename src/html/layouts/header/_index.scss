@@ -46,7 +46,6 @@
     padding-block: 12px;
   }
 
-
   &__link {
     position: relative;
     border-radius: 5px;
@@ -80,12 +79,5 @@
     &:active {
       color: var(--с-celery);
     }
-  }
-}
-
-.burger.burger--active+.menu {
-  @include rmax($md) {
-    opacity: 1;
-    left: 0;
   }
 }

@@ -13,6 +13,7 @@ window.addEventListener('scroll', () => {
 // burger
 
 const burgerBtnEl = document.querySelector('.burger');
+const menuLinks = document.querySelectorAll('.menu__link');
 
 const handleBurgerClick = () => {
   burgerBtnEl.classList.toggle('burger--active');
@@ -22,6 +23,12 @@ document.addEventListener('click', (e) => {
   if (e.target.classList.contains('burger')) {
     handleBurgerClick();
   }
+});
+
+menuLinks.forEach((link) => {
+  link.addEventListener('click', () => {
+    burgerBtnEl.classList.remove('burger--active');
+  });
 });
 
 // link enable/disable atribut target= blank
