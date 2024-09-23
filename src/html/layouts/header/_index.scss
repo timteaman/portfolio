@@ -22,6 +22,8 @@
 
 .menu {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 32px;
   font-size: 18px;
   font-weight: 500;

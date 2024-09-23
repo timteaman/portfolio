@@ -1,15 +1,22 @@
+@use '../../../styles/mixins/' as*;
+
 .not-found {
 
   &__title {
     display: flex;
     flex-direction: column;
-  }
-
-  &__text {
     color: var(--c-white);
     text-transform: uppercase;
     font-weight: 700;
     font-size: 120px;
+
+    @include rmax($sm) {
+      font-size: 98px;
+    }
+  }
+
+  &__text {
+
     animation: typewriter 1s forwards, glitch 2s 1s infinite;
     position: relative;
 
