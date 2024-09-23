@@ -38,10 +38,10 @@ links.forEach((link) => {
 
 // load more/less text
 
-const experienceButton = document.querySelector('.experience-card__btn');
-if (experienceButton) {
-  experienceButton.addEventListener('click', function () {
-    const textElement = document.querySelector('#collapseSummary');
+document.querySelectorAll('.experience-card__btn').forEach((button) => {
+  button.addEventListener('click', function () {
+    const textElement =
+      this.closest('.experience-card').querySelector('#collapseSummary');
     if (textElement) {
       textElement.classList.toggle('expanded');
 
@@ -50,7 +50,7 @@ if (experienceButton) {
         : 'Load More';
     }
   });
-}
+});
 
 // btn animation disabled shake
 
