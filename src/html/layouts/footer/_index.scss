@@ -40,6 +40,8 @@
   &__author {
     font-size: 16px;
     transition: color 0.3s ease-in-out, outline-color 0.3s ease-in-out;
+    outline: 2px solid transparent;
+    outline-offset: 5px;
 
     @include hover {
       color: var(--c-yellow-green);
