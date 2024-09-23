@@ -1,11 +1,14 @@
 @use './../../../styles/mixins/' as*;
 
 .btn {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: fit-content;
-  padding: 20px 40px;
+  padding: 20px 24px;
   background-color: var(--c-yellow-green);
   color: var(--c-neutral-black);
+  font-size: 16px;
   font-weight: 700;
   line-height: 1;
   white-space: nowrap;
@@ -15,6 +18,10 @@
   outline-offset: 3px;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out, outline-color 0.3s ease-in-out;
   animation: fadePulse 1.5s infinite ease-in-out;
+
+  @include rmax($md) {
+    padding: 18px 16px;
+  }
 
   &:not(.btn--disabled) {
     @include hover {

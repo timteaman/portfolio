@@ -1,0 +1,58 @@
+@use '../../../../styles/mixins/' as*;
+
+.about-me {
+
+  & {
+    @include size('padding-block', 80 40, 40 20);
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 80px;
+    gap: 20px;
+
+    @include rmax($lg) {
+      flex-direction: column;
+    }
+  }
+
+  &__content {
+    max-width: 704px;
+    width: 100%;
+  }
+
+  &__header {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.4;
+
+    @include rmax($lg) {
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    margin-block: 16px 48px;
+
+    @include rmax($lg) {
+      font-size: 16px;
+    }
+
+  }
+
+  &__wrapper {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__img {
+    border-radius: 16px;
+  }
+}

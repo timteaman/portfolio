@@ -29,19 +29,30 @@ export default {
     {
       name: 'copy-static-files',
       writeBundle() {
-        copyFileSync('src/php/send-email.php', 'send-email.php');
-        // copyFileSync('src/assfavicon-32x32.png', 'dist/favicon-32x32.png');
-        // copyFileSync('src/favicon-16x16.png', 'dist/favicon-16x16.png');
-        // copyFileSync('src/apple-touch-icon.png', 'dist/apple-touch-icon.png');
-        // copyFileSync(
-        //   'src/android-chrome-192x192.png',
-        //   'dist/android-chrome-192x192.png'
-        // );
-        // copyFileSync(
-        //   'src/android-chrome-512x512.png',
-        //   'dist/android-chrome-512x512.png'
-        // );
-        // copyFileSync('src/site.webmanifest', 'dist/site.webmanifest');
+        copyFileSync(
+          'src/assets/favicon/favicon-32x32.png',
+          'dist/favicon-32x32.png'
+        );
+        copyFileSync(
+          'src/assets/favicon/favicon-16x16.png',
+          'dist/favicon-16x16.png'
+        );
+        copyFileSync(
+          'src/assets/favicon/apple-touch-icon.png',
+          'dist/apple-touch-icon.png'
+        );
+        copyFileSync(
+          'src/assets/favicon/android-chrome-192x192.png',
+          'dist/android-chrome-192x192.png'
+        );
+        copyFileSync(
+          'src/assets/favicon/android-chrome-512x512.png',
+          'dist/android-chrome-512x512.png'
+        );
+        copyFileSync(
+          'src/assets/favicon/site.webmanifest',
+          'dist/site.webmanifest'
+        );
       },
     },
   ],

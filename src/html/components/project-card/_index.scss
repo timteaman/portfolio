@@ -2,6 +2,26 @@
 
 .project-card {
   padding: 15px;
+  border-radius: 10px;
+  background-color: #1A1A1A;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  outline: 2px solid transparent;
+  outline-offset: 5px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out, outline-color 0.3s ease-in-out;
+
+  @include hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  &:focus {
+    outline-color: var(--c-white);
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
 
   &__inner {
     display: flex;
@@ -25,7 +45,6 @@
   &__info {
     color: var(--c-white);
   }
-
 }
 
 .links {
@@ -63,5 +82,4 @@
       opacity: 0.5;
     }
   }
-
 }

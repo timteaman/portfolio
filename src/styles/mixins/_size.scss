@@ -7,10 +7,14 @@ $minValue: 360;
 }
 
 @mixin size($propName, $max, $min, $stopSize: $maxValue) {
-  @if $max == $min {
+  @if $max ==$min {
     #{$propName}: #{$max}px;
-  } @else {
-    #{$propName}: sizeMax($max, $min);
+  }
+
+  @else {
+    & {
+      #{$propName}: sizeMax($max, $min);
+    }
 
     @media (min-width: #{$stopSize}px) {
       #{$propName}: #{$max}px;

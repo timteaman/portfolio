@@ -1,26 +1,17 @@
 @use '../../../../styles/mixins/' as*;
 
 .about {
-  padding-block: 80px;
+  & {
+    @include size('padding-block', 80, 40);
+  }
 
   &__wrapper {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
 
     @include rmax($md) {
       flex-direction: column;
-    }
-  }
-
-  &__title {
-    font-family: var(--ff-secondary);
-    font-size: 101px;
-    line-height: 0.9;
-    text-transform: uppercase;
-
-    @include rmax($md) {
-      margin-block: 0 10px;
-      font-size: 42px;
     }
   }
 
@@ -34,6 +25,7 @@
     font-size: 32px;
     font-weight: 500;
     line-height: 1.4;
+    color: var(--c-white);
 
     @include rmax($md) {
       font-size: 24px;
@@ -65,6 +57,11 @@
 
     @include hover {
       color: var(--c-white);
+
+      &::after {
+        transition: background-color 0.3s ease-in-out;
+        background-color: var(--c-white);
+      }
     }
 
     &:focus {
@@ -84,4 +81,5 @@
       font-size: 24px;
     }
   }
+
 }

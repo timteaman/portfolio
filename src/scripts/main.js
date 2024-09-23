@@ -36,15 +36,41 @@ links.forEach((link) => {
   }
 });
 
+// load more/less text
+
+const experienceButton = document.querySelector('.experience-card__btn');
+if (experienceButton) {
+  experienceButton.addEventListener('click', function () {
+    const textElement = document.querySelector('#collapseSummary');
+    if (textElement) {
+      textElement.classList.toggle('expanded');
+
+      this.textContent = textElement.classList.contains('expanded')
+        ? 'Show Less'
+        : 'Load More';
+    }
+  });
+}
+
 // btn animation disabled shake
 
 const disabledButton = document.querySelector('.btn--disabled');
+if (disabledButton) {
+  disabledButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    disabledButton.classList.add('shake');
 
-disabledButton.addEventListener('click', function (e) {
-  e.preventDefault();
-  disabledButton.classList.add('shake');
+    setTimeout(() => {
+      disabledButton.classList.remove('shake');
+    }, 1000);
+  });
+}
 
-  setTimeout(() => {
-    disabledButton.classList.remove('shake');
-  }, 1000);
+// add link to div container projects-card
+
+document.querySelectorAll('.project-card').forEach((card) => {
+  card.addEventListener('click', function () {
+    const link = card.querySelector('a.links__anchor').href;
+    window.open(link, '_blank');
+  });
 });

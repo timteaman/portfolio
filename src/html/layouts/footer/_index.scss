@@ -13,17 +13,6 @@
     }
   }
 
-  &__header {
-    font-family: var(--ff-secondary);
-    font-size: 76px;
-    line-height: 1;
-    margin-block: 16px;
-
-    @include rmax($md) {
-      font-size: 44px;
-    }
-  }
-
   &__text {
     font-size: 16px;
   }

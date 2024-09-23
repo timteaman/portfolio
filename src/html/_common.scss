@@ -1,0 +1,67 @@
+@use '../styles/mixins/' as*;
+
+
+.title {
+  margin-bottom: 8px;
+  font-family: var(--ff-secondary);
+  font-size: 76px;
+  line-height: 1;
+  color: var(--c-white);
+
+  &--big {
+    font-size: 101px;
+    line-height: 0.9;
+
+    @include rmax($md) {
+      font-size: 58px !important;
+    }
+  }
+
+  @include rmax($md) {
+    font-size: 42px;
+  }
+}
+
+.color-white {
+  color: var(--c-white);
+}
+
+.text-underline {
+  outline: 2px solid transparent;
+  outline-offset: 5px;
+  border-radius: 5px;
+  transition: color 0.3s ease-in-out;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--c-yellow-green);
+  }
+
+  &:focus {
+    outline-color: var(--c-white);
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.section-line {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--c-tundora);
+  }
+}

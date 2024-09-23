@@ -1,19 +1,18 @@
 <section class="projects section-line" id="projects">
   <div class="container">
 
-    <div class="projects__inner">
+    <div class="projects__text">
+      <h2 class="projects__title title">Featured Projects</h2>
+      <p>
+        Here are some of the selected projects that showcase my passion for front-end development.
+      </p>
+    </div>
 
-      <div class="projects__text">
-        <h2 class="projects__header">Featured Projects</h2>
-        <p>
-          Here are some of the selected projects that showcase my passion for front-end development.
-        </p>
-      </div>
+    <div class="projects__group">
 
-      <div class="projects__group">
-
-        <include src="html/components/project-card/_index.html" locals='{
+      <include src="html/components/project-card/_index.html" locals='{
         "imgName": "1",
+        "imageAlt": "Simple Food preview image",
         "linksDemo": "https://timteaman.github.io/simplefood/src/",
         "linksGithub": "https://github.com/timteaman/simplefood",
         "headerTitle" : "Simple Food",
@@ -23,8 +22,9 @@
 
       }'></include>
 
-        <include src="html/components/project-card/_index.html" locals='{
+      <include src="html/components/project-card/_index.html" locals='{
         "imgName": "2",
+        "imageAlt": "Museum landing preview image",
         "linksDemo": "https://timteaman.github.io/museum_lending/src/",
         "linksGithub": "https://github.com/timteaman/museum_lending",
         "headerTitle" : "Museum landing",
@@ -34,8 +34,9 @@
 
       }'></include>
 
-        <include src="html/components/project-card/_index.html" locals='{
+      <include src="html/components/project-card/_index.html" locals='{
         "imgName": "3",
+        "imageAlt": "Bicycle store preview image",
         "linksDemo": "/not-found.html",
         "linksGithub": "https://github.com/timteaman/bicycle_market",
         "headerTitle" : "Bicycle store",
@@ -45,13 +46,11 @@
 
       }'></include>
 
-      </div>
-
-      <button class="projects__button btn btn--disabled" type="button">
-        See more
-      </button>
-
     </div>
+
+    <button class="projects__button btn btn--disabled" type="button">
+      See more
+    </button>
 
   </div>
 </section>
