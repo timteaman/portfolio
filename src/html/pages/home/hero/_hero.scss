@@ -3,7 +3,8 @@
 .hero {
 
   & {
-    @include size('padding-block', 80, 40);
+    @include size('padding-top', 100, 40);
+    @include size('padding-bottom', 80, 40);
   }
 
   &__inner {

@@ -11,13 +11,16 @@
   &.scrolled {
     background-color: rgba(#1A1A1A, 0.95);
   }
+
+  &__inner {
+    padding-block: 24px;
+  }
 }
 
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-block: 24px;
 }
 
 .menu {

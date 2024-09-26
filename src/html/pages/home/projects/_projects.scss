@@ -1,6 +1,8 @@
 @use '../../../../styles/mixins/' as*;
 
 .projects {
+  scroll-margin-top: 40px;
+
   & {
     @include size('padding-block', 80, 40);
   }
