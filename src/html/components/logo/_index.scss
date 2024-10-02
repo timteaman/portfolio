@@ -17,4 +17,8 @@
   &:active {
     opacity: 0.5;
   }
+
+  @include rmax($sm) {
+    width: 150px;
+  }
 }
