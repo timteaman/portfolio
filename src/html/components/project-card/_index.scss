@@ -26,7 +26,14 @@
   &__inner {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 20px;
+  }
+
+  @include rmax($md) {
+    &__img {
+      width: 100%;
+    }
   }
 
   &__title {
