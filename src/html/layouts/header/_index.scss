@@ -9,7 +9,11 @@
   z-index: 10;
 
   &.scrolled {
-    background-color: rgba(#1A1A1A, 0.95);
+    background-color: rgba(#1A1A1A, 0.98);
+
+    .header__inner {
+      padding-block: 12px;
+    }
   }
 
   &__inner {
