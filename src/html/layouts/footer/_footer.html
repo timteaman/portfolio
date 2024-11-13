@@ -25,25 +25,32 @@
 
       </div>
 
-      <form class="form" action="https://formspree.io/f/xpwagjnl" method="POST">
-        <label class="form__label" for="name">Name</label>
-        <input class="form__input" type="text" name="name" id="name" placeholder="Your name" autocomplete="name"
-          required>
+      <form class="form" action="send_email.php" method="POST" id="contactForm">
 
-        <label class="form__label" for="email">Email</label>
-        <input class="form__input" type="email" name="email" id="email" placeholder="Your email" autocomplete="email"
-          required>
+        <label class="form__label" for="name">Name
+          <input class="form__input" type="text" name="name" id="name" placeholder="Your name" autocomplete="name">
+        </label>
 
-        <label class="form__label" for="subject">Subject</label>
-        <input class="form__input" type="text" name="subject" id="subject" placeholder="Subject" autocomplete="off"
-          required>
 
-        <label class="form__label" for="message">Message</label>
-        <textarea class="form__area" name="message" id="message" placeholder="Write your message" autocomplete="off"
-          required></textarea>
+        <label class="form__label" for="email">Email
+          <input class="form__input" type="email" name="email" id="email" placeholder="Your email" autocomplete="email">
+        </label>
+
+
+        <label class="form__label" for="subject">Subject
+          <input class="form__input" type="text" name="subject" id="subject" placeholder="Subject" autocomplete="off">
+        </label>
+
+
+        <label class="form__label form__margin" for="message">Message
+          <textarea class="form__area" name="message" id="message" placeholder="Write your message"
+            autocomplete="off"></textarea>
+        </label>
 
         <button class="btn" type="submit">Submit</button>
+
       </form>
+
     </div>
 
     <a class="footer__author" href="https://www.figma.com/@sumn2u" target="_blank">Design by Suman Kunwar</a>

@@ -57,6 +57,14 @@ export default {
     },
   ],
 
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler',
+      },
+    },
+  },
+
   build: {
     root: './src',
     sourcemap: true,

@@ -9,7 +9,7 @@
   color: var(--c-white);
   cursor: pointer;
 
-  &.burger--active+.menu {
+  &.burger--active+.header-menu {
     @include rmax($md) {
       opacity: 1;
       left: 0;
