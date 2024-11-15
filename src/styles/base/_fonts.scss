@@ -3,10 +3,7 @@
 $fontPrimary: "Manrope";
 $fontSecondary: "BebasNeue";
 
-// 
-
 @include font-woff2($fontPrimary, "/src/assets/fonts/#{$fontPrimary}-Regular", 400, normal);
-@include font-woff2($fontPrimary, "/src/assets/fonts/#{$fontPrimary}-Medium", 500, normal);
 @include font-woff2($fontPrimary, "/src/assets/fonts/#{$fontPrimary}-Bold", 700, normal);
 
 
