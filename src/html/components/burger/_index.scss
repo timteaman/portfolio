@@ -12,7 +12,7 @@
   &.burger--active+.header-menu {
     @include rmax($md) {
       opacity: 1;
-      left: 0;
+      transform: translateX(0);
     }
   }
 
